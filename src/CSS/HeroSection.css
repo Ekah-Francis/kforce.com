@@ -1,0 +1,170 @@
+/* Container */
+.hero-section {
+  position: relative;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  height: 100vh;
+}
+br {
+  display: none;
+}
+
+/* Video Background */
+.video-background {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 30%;
+}
+
+.video-element {
+  margin: auto;
+  position: absolute;
+  z-index: -1;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+  height: auto;
+}
+
+/* Gradient Overlay */
+.hero-video-gradient {
+  margin-top: -80px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* Dark Mask */
+.hero-image-mask {
+  margin-top: -80px;
+  padding: 4rem;
+  position: absolute;
+  width: 100%;
+  height: 120vh;
+  opacity: 0.5;
+  z-index: -1;
+  background-color: rgb(0, 0, 0);
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  padding: 0 5%;
+}
+
+.content-container {
+  margin: 8.5rem auto;
+  width: 1034px;
+  text-align: center;
+}
+
+.content-container span {
+  font-size: 67px;
+  font-weight: 700;
+  height: 144px;
+  line-height: 72px;
+}
+
+p a.btn-filled {
+  color: white;
+  background-color: #007bff;
+  padding: 8px 0 8px 0;
+  padding-top: 1rem;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 3rem auto;
+  display: block;
+  width: 310px;
+  text-align: center;
+  height: 52px;
+  border-radius: 20px;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+p a.btn-filled:hover {
+  background-color: white;
+  color: #0056b3;
+}
+
+@media (max-width: 968px) {
+  .hero-section {
+    height: 70vh;
+  }
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-top: 12rem;
+  }
+  .video-element {
+    width: 100%;
+    height: 1000px;
+    object-fit: cover;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .video-element {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .hero-image-mask {
+    margin-top: -0.3rem;
+  }
+  .hero-section {
+    height: 80vh;
+  }
+
+  .content-container {
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 2rem;
+    width: 90%;
+  }
+
+  p a.btn-filled {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h1 strong {
+    font-size: 1.3rem;
+  }
+
+  p a.btn-filled {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    padding-top: 1rem;
+    margin-top: 12rem;
+  }
+}
