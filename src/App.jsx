@@ -2,7 +2,7 @@ import "./App.css";
 import AboutComponent from "./components/AboutComponent";
 import CardSlider from "./components/CardSlider";
 import ExpertiseSection from "./components/ExpertiseSection";
-import HeroSection from "./components/heroSection";
+import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import SolutionSection from "./components/SolutionSection";
 import InsightsComponent from "./components/InsightsComponent";
