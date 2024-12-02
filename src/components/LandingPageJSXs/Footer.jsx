@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import "../CSS/Footer.css";
+import "../../CSS/LandingPageCSS/Footer.css";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -41,7 +41,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <hr className="divider" />
+          <hr className="divider-footer" />
           <div className="link-table">
             <div className="table-column">
               <h3>

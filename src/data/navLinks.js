@@ -5,12 +5,12 @@ const navLinks = [
     subLinks: [
       {
         name: " Search Jobs  ",
-        url: "/find-work/search-jobs",
+        url: "/search-jobs",
         description: "Find tomorrow’s opportunities, today",
       },
       {
         name: "Submit Your Resumes",
-        url: "/find-work/freelance",
+        url: "/search",
         description: "  Connect with a recruiter .",
       },
       {

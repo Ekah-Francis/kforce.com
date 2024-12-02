@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import "../CSS/CardSlider.css";
+import "../../CSS/LandingPageCSS/CardSlider.css";
 
 const CardSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

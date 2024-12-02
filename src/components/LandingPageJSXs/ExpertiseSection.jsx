@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useRef } from "react";
-import "../CSS/ExpertiseSection.css";
+import "../../CSS/LandingPageCSS/ExpertiseSection.css";
 
 const ExpertiseSection = () => {
   const cards = [

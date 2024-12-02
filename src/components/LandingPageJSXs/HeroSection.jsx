@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import "../CSS/HeroSection.css";
+import "../../CSS/LandingPageCSS/HeroSection.css";
 
 const HeroSection = () => {
   return (

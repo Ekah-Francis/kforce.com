@@ -11,9 +11,9 @@ import {
   FaAngleDown,
 } from "react-icons/fa";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import navLinks from "../data/navLinks"; // Import the data
+import navLinks from "../../data/navLinks"; // Import the data
 import { Link } from "react-router-dom"; // Use Link for routing
-import "../CSS/Navbar.css";
+import "../../CSS/LandingPageCSS/Navbar.css";
 import { FaXTwitter } from "react-icons/fa6";
 import { TiSocialInstagram } from "react-icons/ti";
 import { MdOutlineArrowRightAlt } from "react-icons/md";

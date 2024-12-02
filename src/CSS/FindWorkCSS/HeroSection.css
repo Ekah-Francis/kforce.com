@@ -1,0 +1,121 @@
+.page-job-seeker .page-hero-image {
+  background: url("https://kforcewebeast.azureedge.net/media/406892/hero.jpg")
+    no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  padding-bottom: 5%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -1rem;
+}
+
+.page-job-seeker .page-hero-image strong {
+  text-align: center;
+  color: #fff;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: -0.18px;
+  line-height: 72px;
+  margin: 0 15px;
+  max-width: 800px;
+}
+
+.page-job-seeker .hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  margin-top: 2rem;
+  color: white;
+}
+
+.btn-filled-white-lochmara {
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 22px;
+  transition: all 0.3s ease-in-out;
+  background-color: #166cb6;
+  border: 2px solid #166cb6;
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+}
+
+.btn-filled-white-lochmara:hover {
+  background-color: #fff;
+  color: #166cb6;
+}
+
+/* For mobile screens */
+@media screen and (max-width: 600px) {
+  .page-job-seeker .page-hero-image {
+    background: url("https://kforcewebeast.azureedge.net/media/406893/find-work-mobile-header.png")
+      no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    padding: 0;
+  }
+  .page-job-seeker .page-hero-image strong {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
+    margin: 20px 15px;
+    text-align: center;
+  }
+  .btn-filled-white-lochmara {
+    width: 90%;
+    font-size: 14px;
+    padding: 8px 15px;
+    margin: 15px auto;
+  }
+  .page-job-seeker .hero-content {
+    margin-top: 1rem;
+  }
+}
+
+/* For tablets */
+@media screen and (max-width: 991px) {
+  .page-job-seeker .page-hero-image {
+    height: 80vh;
+    padding: 0;
+  }
+  .page-job-seeker .page-hero-image strong {
+    font-size: 34px;
+    line-height: 44px;
+    margin: 20px 10px;
+  }
+  .btn-filled-white-lochmara {
+    font-size: 15px;
+    width: 80%;
+  }
+}
+
+/* For small desktops */
+@media screen and (max-width: 1200px) {
+  .page-job-seeker .page-hero-image {
+    height: 75vh;
+  }
+  .page-job-seeker .page-hero-image strong {
+    font-size: 48px;
+    line-height: 60px;
+  }
+  .btn-filled-white-lochmara {
+    font-size: 16px;
+    width: 60%;
+  }
+}
+
+/* Center all content across all screen sizes */
+.page-job-seeker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+}

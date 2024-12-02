@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import "../CSS/InsightsComponent.css"; // Importing the CSS file
+import "../../CSS/LandingPageCSS/InsightsComponent.css"; // Importing the CSS file
 
 const InsightsComponent = () => {
   return (

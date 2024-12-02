@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import "../CSS/SolutionSection.css";
+import "../../CSS/LandingPageCSS/SolutionSection.css";
 import { MdKeyboardDoubleArrowRight, MdOutlineClose } from "react-icons/md";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { FaAngleDown, FaChevronDown } from "react-icons/fa";
