@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { FaChevronDown, FaTimes } from "react-icons/fa";
 import "../../CSS/FindWorkCSS/ExpertiseArea.css";
+import { Link } from "react-router-dom";
 
 const ExpertiseArea = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,22 +44,12 @@ const ExpertiseArea = () => {
                   companies.
                 </p>
                 <div className="links">
-                  <a
-                    href="/find-work/search-jobs/?jf=TechByContract"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button"
-                  >
+                  <Link to="/search-jobs" className="button">
                     Search Contract Jobs
-                  </a>
-                  <a
-                    href="/find-work/search-jobs/?jf=TechByPermanent"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button"
-                  >
+                  </Link>
+                  <Link to="/search-jobs" className="button">
                     Search Direct Hire Jobs
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}
@@ -84,22 +75,12 @@ const ExpertiseArea = () => {
                   an impact.
                 </p>
                 <div className="links">
-                  <a
-                    href="/find-work/search-jobs/?jf=FAbyContract"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button"
-                  >
+                  <Link to="/search-jobs" className="button">
                     Search Contract Jobs
-                  </a>
-                  <a
-                    href="/find-work/search-jobs/?jf=FAbyPermanent"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button"
-                  >
+                  </Link>
+                  <Link to="/search-jobs" className="button">
                     Search Direct Hire Jobs
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}

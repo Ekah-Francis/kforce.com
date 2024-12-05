@@ -5,6 +5,10 @@
   text-align: center;
   overflow: hidden;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem; /* Add padding for smaller screens */
 }
 br {
   display: none;
@@ -25,13 +29,16 @@ br {
   margin: auto;
   position: absolute;
   z-index: -1;
-  top: 30%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translateX(-50%);
   visibility: visible;
   opacity: 1;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire container */
+  /* Autoplay on mobile */
+  playsinline: true;
 }
 
 /* Gradient Overlay */
@@ -60,33 +67,36 @@ br {
 .hero-content {
   position: relative;
   padding: 0 5%;
+  z-index: 1; /* Ensure the content stays above the video */
+  margin-top: 0; /* Remove margin-top to avoid overlap */
 }
 
 .content-container {
-  margin: 8.5rem auto;
-  width: 1034px;
+  margin: auto;
+  width: 80%; /* Reduce width for smaller screens */
+  max-width: 1200px; /* Limit max-width */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem; /* Added padding for spacing */
 }
 
 .content-container span {
-  font-size: 67px;
+  font-size: 4rem; /* Adjust font-size for readability */
   font-weight: 700;
-  height: 144px;
-  line-height: 72px;
+  line-height: 1.3;
 }
 
 p a.btn-filled {
   color: white;
   background-color: #007bff;
-  padding: 8px 0 8px 0;
-  padding-top: 1rem;
+  padding: 10px 20px;
   text-decoration: none;
   font-size: 16px;
-  margin: 3rem auto;
-  display: block;
-  width: 310px;
-  text-align: center;
-  height: 52px;
+  margin: 2rem auto;
+  display: inline-block;
   border-radius: 20px;
   border: none;
   transition: background-color 0.3s, color 0.3s;
@@ -97,74 +107,66 @@ p a.btn-filled:hover {
   color: #0056b3;
 }
 
+/* Responsive Design */
 @media (max-width: 968px) {
   .hero-section {
     height: 70vh;
+    padding: 2rem; /* Add some padding on smaller screens */
   }
   .content-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    margin-top: 12rem;
+    width: 90%;
+    margin-top: 10rem; /* Adjust for smaller screens */
   }
   .video-element {
-    width: 100%;
-    height: 1000px;
     object-fit: cover;
   }
 }
 
-/* Responsive Design */
+/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
-  .video-element {
-    width: 600px;
-    height: 600px;
-    object-fit: cover;
-  }
-
-  .hero-image-mask {
-    margin-top: -0.3rem;
-  }
   .hero-section {
     height: 80vh;
+    padding: 1rem;
+  }
+
+  .video-element {
+    width: 100%;
+    height: 100%;
   }
 
   .content-container {
-    margin: 0 auto;
-    margin-top: 3rem;
-    padding: 2rem;
+    margin-top: 2rem;
     width: 90%;
+    padding: 2rem;
   }
 
   p a.btn-filled {
     font-size: 0.9rem;
-    padding: 8px 16px;
-    padding: 1rem;
+    padding: 12px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .content-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  h1 {
-    font-size: 1.5rem;
+  .hero-section {
+    height: 80vh;
+    padding: 1rem;
   }
 
-  h1 strong {
-    font-size: 1.3rem;
+  .content-container {
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+  .content-container span {
+    font-size: 2rem; /* Reduce font-size for small screens */
   }
 
   p a.btn-filled {
     font-size: 0.8rem;
     padding: 6px 12px;
-    padding-top: 1rem;
-    margin-top: 12rem;
   }
 }

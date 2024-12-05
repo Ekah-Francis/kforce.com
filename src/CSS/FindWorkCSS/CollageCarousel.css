@@ -2,12 +2,13 @@
 .bg {
   background-color: gainsboro;
 }
+
 .carousel-container {
   position: relative;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  height: 60vh;
+  height: 60vh; /* or any desired height */
   padding: 6rem;
 }
 
@@ -33,15 +34,16 @@
 }
 
 .carousel-item img {
-  width: 30%;
-  height: auto;
-  object-fit: cover;
+  width: 20%; /* Full width of the container */
+  height: 30%; /* Full height of the container */
+  object-fit: cover; /* Ensure images cover the container without distortion */
   position: relative;
   z-index: 1;
 }
 
 .carousel-item img:first-child {
-  width: 40%;
+  width: 40%; /* Full width of the container */
+  height: 40%; /* Full height of the container */
   transform: translateY(20px);
   z-index: 0;
 }
@@ -74,8 +76,8 @@
 
 .carousel-mobile img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%; /* Set image to full height */
+  object-fit: cover; /* Ensures images cover the area */
 }
 
 .carousel-indicator {
@@ -106,8 +108,9 @@
   .carousel-mobile {
     display: block;
   }
+
   .carousel-container {
-    height: 100vh;
+    height: 100vh; /* Full height on smaller screens */
   }
 }
 
@@ -115,6 +118,6 @@
   .carousel-container {
     padding: 1rem;
     padding-bottom: 3rem;
-    height: 70vh;
+    height: 70vh; /* Adjust height for smaller devices */
   }
 }

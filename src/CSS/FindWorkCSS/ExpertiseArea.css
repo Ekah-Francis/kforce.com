@@ -32,7 +32,6 @@
 
 .accordionArea {
   width: 50%;
-  /* background: rgba(255, 255, 255, 0.9); */
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -90,29 +89,30 @@
   border-top: 3px solid #ccc;
   margin: 10px 0;
 }
+
 .title {
   text-align: start;
 }
+
 .textSection {
   width: 50%;
   margin: 0 auto;
   margin-right: -3rem;
   text-align: start;
 }
+
 .accordionArea {
   margin: 2rem auto;
   margin-right: -3rem;
 }
-/* .description {
-  margin: 0 auto;
-  width: 50%;
-} */
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .expertiseAreaContainer {
     padding: 10%;
-    height: 130vh;
+    height: auto;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.1);
     background-image: url("https://kforcewebeast.azureedge.net/media/406898/mobile_backgrond.jpg");
   }
 
@@ -120,32 +120,42 @@
     align-items: center;
     text-align: center;
   }
+
   .accordion {
     background: transparent;
   }
+
   .description {
     text-align: start;
   }
+
   .links {
     display: block;
     margin: 1rem auto;
   }
+
   .button {
-    margin: 0.5rem auto;
-    border-radius: 2rem;
+    flex-direction: column;
+    width: 100%;
   }
+
   .textSection {
     width: 100%;
     text-align: start;
     margin: 1rem auto;
   }
+
   .title {
     text-align: start;
   }
+
   .accordionArea {
     width: 100%;
     text-align: start;
     margin: 0 auto;
     background: transparent;
+  }
+  .links {
+    flex-direction: column;
   }
 }

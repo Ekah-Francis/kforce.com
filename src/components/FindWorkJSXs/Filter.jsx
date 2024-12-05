@@ -50,21 +50,41 @@ const FilterComponent = () => {
     setIsFilterOpen((prev) => !prev);
   };
 
+  // Filter jobs based on active filters
+  const filteredJobs = jobsData.filter((job) => {
+    if (activeFilters.length === 0) return true;
+
+    return activeFilters.every((filter) => {
+      return (
+        (filters.jobType[job.jobType] && job.jobType === filter) ||
+        (filters.remote[job.remote] && job.remote === filter) ||
+        (filters.areaOfExpertise[job.areaOfExpertise] &&
+          job.areaOfExpertise === filter) ||
+        (filters.industry[job.industry] && job.industry === filter) ||
+        (filters.jobSkills[job.jobSkills] && job.jobSkills.includes(filter)) ||
+        (filters.datePosted[job.datePosted] && job.datePosted === filter)
+      );
+    });
+  });
+
   return (
     <div className="flex-n-cont">
       <div>
         <div className="btn-bond">
-          <button className="save-job-alert">Save a Job Alert</button>
-          <button className="save-job-alert">Reset Search</button>
+          {/* <button className="save-job-alert">Save a Job Alert</button> */}
+          <button
+            className="save-job-alert"
+            onClick={() => setActiveFilters([])}
+          >
+            Reset Search
+          </button>
         </div>
 
         <div className={`filter-container ${isFilterOpen ? "open" : ""}`}>
-          {/* Small Screen Filter Button */}
           <button className="filter-toggle-button" onClick={toggleFilterMenu}>
             {isFilterOpen ? "Close Filters" : "Filter & Sort (1213 results)"}
           </button>
 
-          {/* Filter Content */}
           {(isFilterOpen || window.innerWidth > 768) && (
             <div className="filter-content">
               <div className="filter-section">
@@ -102,8 +122,8 @@ const FilterComponent = () => {
         </div>
       </div>
 
-      {/* Pass the jobs data to JobsList */}
-      <JobsList jobs={jobsData} className="listing" />
+      {/* Pass the filtered jobs to JobsList */}
+      <JobsList jobs={filteredJobs} className="listing" />
     </div>
   );
 };

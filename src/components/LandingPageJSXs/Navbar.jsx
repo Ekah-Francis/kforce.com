@@ -1,4 +1,3 @@
-// Navbar.jsx
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import {
@@ -34,6 +33,10 @@ const Navbar = () => {
 
   const toggleSearch = () => {
     setSearchOpen(!isSearchOpen);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
   };
 
   return (
@@ -134,7 +137,6 @@ const Navbar = () => {
             <img src="/kforce.png" alt="" />
           </div>
         </Link>
-        {/* <FaSearch className="search-icon" onClick={toggleSearch} /> */}
         <FaBars className="hamburger-menu" onClick={toggleSidebar} />
       </div>
 
@@ -147,7 +149,11 @@ const Navbar = () => {
             {navLinks.map((link, index) => (
               <div className="sidebar-item" key={index}>
                 <div className="sidebar-main-link-container">
-                  <Link to={link.url} className="sidebar-main-link">
+                  <Link
+                    to={link.url}
+                    className="sidebar-main-link"
+                    onClick={closeSidebar}
+                  >
                     {link.name}
                   </Link>
                   <div
@@ -167,6 +173,7 @@ const Navbar = () => {
                         <Link
                           to={subLink.url}
                           className="sidebar-dropdown-item"
+                          onClick={closeSidebar}
                         >
                           {subLink.name}
                         </Link>
@@ -176,11 +183,10 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <Link to="/" className="alone-link-side">
+            <Link to="/" className="alone-link-side" onClick={closeSidebar}>
               FIND AN OFFICE
-              <div className="magn-btm"></div>
             </Link>
-            <Link to="/" className="alone-link-btn">
+            <Link to="/" className="alone-link-btn" onClick={closeSidebar}>
               APPLY NOW <HiArrowLongRight className="right-arrow" />
             </Link>
           </div>

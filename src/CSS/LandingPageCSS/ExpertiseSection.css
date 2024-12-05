@@ -1,6 +1,4 @@
-/* General Styling */
 .custom-container {
-  font-family: Arial, sans-serif;
   margin-top: 3rem;
 }
 
@@ -14,7 +12,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 2rem;
 }
 
 .nav-btns {
@@ -24,7 +21,9 @@
 @media (max-width: 768px) {
   .bg-image {
     background-image: url("/kforepic.jpg");
-    height: 100vh;
+    height: auto;
+    padding: 6rem 2rem;
+    margin-top: -2rem;
   }
 }
 
@@ -34,6 +33,7 @@
 }
 
 .content-text span {
+  width: 100%;
   font-size: 32px;
   font-weight: 700;
   color: #333333;
@@ -118,14 +118,17 @@
 }
 
 @media (max-width: 768px) {
+  .custom-container {
+    height: 130vh;
+    margin-bottom: -50%;
+  }
   .cards-container {
     scroll-snap-type: x mandatory;
     gap: 0.5rem;
   }
   .content-text {
-    margin-top: -17rem;
+    /* padding-bottom: 30%; */
   }
-
   .card {
     flex: 0 0 20%;
     scroll-snap-align: start;
@@ -168,5 +171,10 @@
 
   .nav-btn:active {
     transform: scale(1); /* Reset scale on click */
+  }
+}
+@media (max-width: 368px) {
+  .custom-container {
+    margin-bottom: 50%;
   }
 }

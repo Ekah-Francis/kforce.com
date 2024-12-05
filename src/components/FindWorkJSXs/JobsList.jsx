@@ -13,7 +13,7 @@ const JobsList = ({ jobs }) => {
 
   return (
     <div className="jobs-list-container">
-      <p className="job-count">
+      <p className="job-count top-count">
         Displaying 1 - {jobs.length} of {jobs.length}
       </p>
       <div className="jobs-container">
@@ -34,10 +34,13 @@ const JobsList = ({ jobs }) => {
                 {job.city}
               </p>
             </div>
-            <hr className="list-hr" />
+            <div className="content-line"></div>
           </div>
         ))}
       </div>
+      <p className="job-count btm-count">
+        Displaying 1 - {jobs.length} of {jobs.length}
+      </p>
     </div>
   );
 };

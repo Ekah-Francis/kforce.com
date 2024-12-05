@@ -10,7 +10,7 @@ const navLinks = [
       },
       {
         name: "Submit Your Resumes",
-        url: "/search",
+        url: "/submit-resume",
         description: "  Connect with a recruiter .",
       },
       {
@@ -18,11 +18,11 @@ const navLinks = [
         url: "/find-work/full-time",
         description: "  Download our referral app",
       },
-      {
-        name: "Part-time",
-        url: "/find-work/part-time",
-        description: "Discover part-time job options.",
-      },
+      // {
+      //   name: "Part-time",
+      //   url: "/find-work/part-time",
+      //   description: "Discover part-time job options.",
+      // },
     ],
   },
   {

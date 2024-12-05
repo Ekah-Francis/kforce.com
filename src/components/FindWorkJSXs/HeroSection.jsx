@@ -10,7 +10,7 @@ const HeroSection = () => {
         <article className="hero-content" role="article">
           <strong>Helping You Find Tomorrow's Opportunities, Today!</strong>
           <p>&nbsp;</p>
-          <p style={{ textAlign: "center" }}>
+          <p style={{ textAlign: "center", marginBottom: "6rem" }}>
             <span style={{ fontSize: "14pt" }}>
               <a
                 rel="noopener"
