@@ -54,10 +54,10 @@ const ExpertiseSection = () => {
           </p>
         </div>
       </div>
-      <div className="cards-section">
-        <div className="cards-container" ref={cardContainerRef}>
+      <div className="expert-cards-section">
+        <div className="expert-cards-container" ref={cardContainerRef}>
           {cards.map((card) => (
-            <a key={card.id} href={card.url} className="card">
+            <a key={card.id} className="expert-card">
               <strong>{card.title}</strong>
               <p>{card.description}</p>
               <span className="survey-text"></span>

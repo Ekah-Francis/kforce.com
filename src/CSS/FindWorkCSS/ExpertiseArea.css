@@ -1,6 +1,6 @@
 .expertiseAreaContainer {
   position: relative;
-  background-image: url("https://kforcewebeast.azureedge.net/media/406897/areasofexpertise.jpg");
+  background-image: url("/areasofexpertise.jpg");
   background-size: cover;
   background-position: center;
   padding: 5% 10%;
@@ -113,7 +113,7 @@
     height: auto;
     background-blend-mode: darken;
     background-color: rgba(0, 0, 0, 0.1);
-    background-image: url("https://kforcewebeast.azureedge.net/media/406898/mobile_backgrond.jpg");
+    background-image: url("/mobile_backgrond.jpg");
   }
 
   .contentArea {

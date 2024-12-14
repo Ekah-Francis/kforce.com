@@ -24,19 +24,15 @@ const SolutionSection = () => {
       title: "Talent Solutions",
       content:
         "Save time finding the right resource for your team while we connect you with the best talent in the marketplace.",
-      image1:
-        "https://kforcewebeast.azureedge.net/media/406967/heroshapes_talentsolutions_3.png",
-      image2:
-        "https://kforcewebeast.azureedge.net/media/407146/homepage-project-solutions.png",
+      image1: "/heroshapes_talentsolutions_3.png",
+      image2: "/homepage-project-solutions.png",
       backgroundColor: "#3190bd",
     },
     {
       title: "Team Solutions",
 
-      image1:
-        "https://kforcewebeast.azureedge.net/media/406959/heroshapes_teamsolutions_3.png",
-      image2:
-        "https://kforcewebeast.azureedge.net/media/406963/heroshapes_teamsolutions_1.png",
+      image1: "/heroshapes_teamsolutions_3.png",
+      image2: "/heroshapes_teamsolutions_1.png",
       content:
         "Take charge of your most valued initiatives while we provide a dedicated team offering technical expertise and services.",
 
@@ -46,10 +42,8 @@ const SolutionSection = () => {
       title: "Project Solutions",
       content:
         "Empower your teams to deliver results while we provide the strategy, technology, and execution expertise.",
-      image1:
-        "https://kforcewebeast.azureedge.net/media/407125/heroshapes_projectsolutions_2.png",
-      image2:
-        "https://kforcewebeast.azureedge.net/media/407143/homepage-project-solutions.png",
+      image1: "projecthead.png",
+      image2: "projecthead2.png",
       backgroundColor: "#07285c",
     },
   ];
@@ -89,7 +83,7 @@ const SolutionSection = () => {
                   cursor: "pointer",
                   color: activeIndex === index ? "black" : "rgb(179, 177, 177)",
                 }}
-                href="/"
+                href="/talent-solution"
               >
                 {solution.title}
                 <MdKeyboardDoubleArrowRight />
@@ -122,7 +116,7 @@ const SolutionSection = () => {
                 </p>
                 <p>{solution.content}</p>
                 <a
-                  href=""
+                  href="/talent-solution"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -191,7 +185,7 @@ const SolutionSection = () => {
             >
               <p>{solution.content}</p>
               <a
-                href=""
+                href="/talent-solution"
                 style={{
                   display: "flex",
                   alignItems: "center",

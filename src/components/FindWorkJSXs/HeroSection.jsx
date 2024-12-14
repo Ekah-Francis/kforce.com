@@ -14,8 +14,7 @@ const HeroSection = () => {
             <span style={{ fontSize: "14pt" }}>
               <a
                 rel="noopener"
-                href="/find-work/search-jobs/"
-                target="_blank"
+                href="/search-jobs"
                 title="Search Jobs"
                 className="btn-filled-white-lochmara"
               >
@@ -24,8 +23,7 @@ const HeroSection = () => {
               &nbsp; &nbsp;
               <a
                 rel="noopener"
-                href="/find-work/submit-your-resume/"
-                target="_blank"
+                href="/submit-resume"
                 title="Submit Your Resume"
                 className="btn-filled-white-lochmara"
               >

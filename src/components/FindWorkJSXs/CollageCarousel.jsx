@@ -7,12 +7,12 @@ const CollageCarousel = () => {
   const [mobileSlide, setMobileSlide] = useState(0);
 
   const images = [
-    "https://kforcewebeast.azureedge.net/media/407095/csr_group1_1.png",
-    "https://kforcewebeast.azureedge.net/media/407099/csr_group2_1.png",
-    "https://kforcewebeast.azureedge.net/media/407096/csr_group2_3.png",
-    "https://kforcewebeast.azureedge.net/media/407086/csr_group1_2.png",
-    "https://kforcewebeast.azureedge.net/media/407094/csr_group1_3.png",
-    "https://kforcewebeast.azureedge.net/media/407098/csr_group2_2.png",
+    "/csr_group1_1.png",
+    "/csr_group2_1.png",
+    "/csr_group2_3.png",
+    "/csr_group1_2.png",
+    "/csr_group1_3.png",
+    "/csr_group2_2.png",
   ];
 
   // Adjust groups for 3 images per slide

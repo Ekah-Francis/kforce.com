@@ -45,16 +45,16 @@ const Footer = () => {
           <div className="link-table">
             <div className="table-column">
               <h3>
-                <a href="/find-work/">Find Work</a>
+                <a href="/find-work">Find Work</a>
               </h3>
               <ul>
                 <li>
-                  <a href="/find-work/search-jobs/#/">Search Jobs</a>
+                  <a href="/search-jobs">Search Jobs</a>
                 </li>
                 <li>
-                  <a href="/submit-resume/">Submit Your Resume</a>
+                  <a href="/submit-resume">Submit Your Resume</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="https://www.kforce.com/kforceconnect-referral-app/">
                     KFORCEconnect
                   </a>
@@ -63,18 +63,18 @@ const Footer = () => {
                   <a href="/find-work/visa-sponsorship-solutions/">
                     Visa Sponsorship
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="table-column">
               <h3>
-                <a href="/solutions/">Solutions</a>
+                <a href="/solution">Solutions</a>
               </h3>
               <ul>
                 <li>
-                  <a href="/solutions/talent-solutions/">Talent Solutions</a>
+                  <a href="/talent-solution">Talent Solutions</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="/solutions/team-solutions/">Team Solutions</a>
                 </li>
                 <li>
@@ -84,20 +84,18 @@ const Footer = () => {
                   <a href="/solutions/international-talent-solutions/">
                     International Talent Solutions
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="table-column">
               <h3>
-                <a href="/about/">About</a>
+                <a href="/about">About</a>
               </h3>
               <ul>
                 <li>
-                  <a href="/about/executive-leadership/">
-                    Executive Leadership
-                  </a>
+                  <a href="/leaders">Executive Leadership</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="/about/sustainability/">Sustainability</a>
                 </li>
                 <li>
@@ -108,10 +106,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="/about/awards/">Awards</a>
-                </li>
+                </li> */}
               </ul>
             </div>
-            <div className="table-column">
+            {/* <div className="table-column">
               <ul className="bigger-link">
                 <li>
                   <a href="/knowledge-center/">Knowledge Center</a>
@@ -132,7 +130,7 @@ const Footer = () => {
                   <a href="/fraud-alert/">Do You Suspect Fraud?</a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>
@@ -143,16 +141,7 @@ const Footer = () => {
         </p>
         <div className="footer-socials">
           <Link to="/signin" className="sign-in">
-            <FaFacebookF className="footer-social-icons" />
-          </Link>
-          <Link to="/signin" className="sign-in">
-            <FaXTwitter className="footer-social-icons" />
-          </Link>
-          <Link to="/signin" className="sign-in">
             <FaLinkedinIn className="footer-social-icons" />
-          </Link>
-          <Link to="/signin" className="sign-in">
-            <TiSocialInstagram className="footer-social-icons" />
           </Link>
         </div>
         <p className="last">

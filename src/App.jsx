@@ -13,6 +13,12 @@ import jobs from "./data/jobs";
 // Import the JobProvider from the context
 import { JobProvider } from "./context/JobContext";
 import SubmitResume from "./components/FindWorkJSXs/submitResume";
+import SolutionSection from "./components/Solutions/SolutionsComponent";
+import TalentSolutionLanding from "./components/Solutions/TalentSolutionLanding";
+import AboutLanding from "./components/AboutJSXs/AboutLanding";
+import LeaderLanding from "./components/AboutJSXs/LeaderLanding";
+import SignInLanding from "./components/SignInJSXs/SignInLanding";
+import LoginComponent from "./components/SignInJSXs/LoginComponent";
 
 function App() {
   return (
@@ -24,13 +30,20 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/find-work" element={<FindWork />} />
+          <Route path="/solutions" element={<SolutionSection />} />
           <Route path="/search-jobs" element={<SearchJob />} />
           <Route path="/job" element={<JobsList jobs={jobs} />} />
+          <Route path="/talent-solution" element={<TalentSolutionLanding />} />
           <Route
             path="/submit-resume/:jobId/:jobTitle"
             element={<SubmitResume />}
           />
           <Route path="/submit-resume" element={<SubmitResume />} />
+          <Route path="/leaders" element={<LeaderLanding />} />
+
+          <Route path="/about" element={<AboutLanding />} />
+          <Route path="/login" element={<LoginComponent />} />
+          <Route path="/sign-in" element={<SignInLanding />} />
           <Route path="/job/:id" element={<JobDetails jobs={jobs} />} />
         </Routes>
         <Footer />

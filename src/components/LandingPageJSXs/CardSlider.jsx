@@ -49,7 +49,7 @@ const CardSlider = () => {
               governance, quality and storage practices.
             </p>
             <div className="action-button">
-              <button>Learn More</button>
+              {/* <button>Learn More</button> */}
             </div>
             <div className="carousel-dots">
               {[...Array(totalSlides)].map((_, index) => (
@@ -83,7 +83,7 @@ const CardSlider = () => {
               survey on Kforce.co...
             </p>
             <div className="action-button">
-              <button>Learn More</button>
+              {/* <button>Learn More</button> */}
             </div>
             <div className="carousel-dots">
               {[...Array(totalSlides)].map((_, index) => (
@@ -114,7 +114,7 @@ const CardSlider = () => {
               Blackman.
             </p>
             <div className="action-button">
-              <button>Learn More</button>
+              {/* <button>Learn More</button> */}
             </div>
             <div className="carousel-dots">
               {[...Array(totalSlides)].map((_, index) => (

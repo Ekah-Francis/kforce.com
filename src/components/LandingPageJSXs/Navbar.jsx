@@ -5,7 +5,6 @@ import {
   FaUser,
   FaBars,
   FaCaretDown,
-  FaFacebookF,
   FaLinkedinIn,
   FaAngleDown,
 } from "react-icons/fa";
@@ -13,9 +12,6 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import navLinks from "../../data/navLinks"; // Import the data
 import { Link } from "react-router-dom"; // Use Link for routing
 import "../../CSS/LandingPageCSS/Navbar.css";
-import { FaXTwitter } from "react-icons/fa6";
-import { TiSocialInstagram } from "react-icons/ti";
-import { MdOutlineArrowRightAlt } from "react-icons/md";
 import { HiArrowLongRight } from "react-icons/hi2";
 
 const Navbar = () => {
@@ -80,36 +76,19 @@ const Navbar = () => {
               )}
             </div>
           ))}
-          <div className="alone-link">
-            <p>1-877-453-6723</p>
-            <Link to="/" className="link">
-              FIND AN OFFICE
-            </Link>
-          </div>
         </nav>
 
         <div className="large-screen-actions">
-          <div className="phone-and-social">
+          <div className="phone-and-social"></div>
+          <div className="search-and-signin">
+            <Link to="/sign-in" className="sign-in">
+              SIGN IN
+            </Link>
             <div className="socials">
-              <Link to="/signin" className="sign-in">
-                <FaFacebookF className="social-icons" />
-              </Link>
-              <Link to="/signin" className="sign-in">
-                <FaXTwitter className="social-icons" />
-              </Link>
               <Link to="/signin" className="sign-in">
                 <FaLinkedinIn className="social-icons" />
               </Link>
-              <Link to="/signin" className="sign-in">
-                <TiSocialInstagram className="social-icons" />
-              </Link>
             </div>
-          </div>
-          <div className="search-and-signin">
-            <FaSearch className="search-icon" onClick={toggleSearch} />
-            <Link to="/signin" className="sign-in">
-              SIGN IN
-            </Link>
           </div>
         </div>
       </div>
@@ -129,7 +108,7 @@ const Navbar = () => {
 
       {/* Small Screen Navbar */}
       <div className="small-screen-icons">
-        <Link to="" className="user-icon">
+        <Link to="/sign-in" className="user-icon">
           <FaUser />
         </Link>
         <Link to="/">
@@ -183,10 +162,12 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <Link to="/" className="alone-link-side" onClick={closeSidebar}>
-              FIND AN OFFICE
-            </Link>
-            <Link to="/" className="alone-link-btn" onClick={closeSidebar}>
+
+            <Link
+              to="/submit-resume"
+              className="alone-link-btn"
+              onClick={closeSidebar}
+            >
               APPLY NOW <HiArrowLongRight className="right-arrow" />
             </Link>
           </div>

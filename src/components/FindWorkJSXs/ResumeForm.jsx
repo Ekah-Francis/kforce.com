@@ -14,7 +14,6 @@ const ResumeForm = ({ formData, handleChange }) => {
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
-            required
           />
         </label>
 
@@ -25,7 +24,6 @@ const ResumeForm = ({ formData, handleChange }) => {
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
-            required
           />
         </label>
 
@@ -36,7 +34,6 @@ const ResumeForm = ({ formData, handleChange }) => {
             name="primaryEmail"
             value={formData.primaryEmail}
             onChange={handleChange}
-            required
           />
         </label>
 
@@ -47,7 +44,6 @@ const ResumeForm = ({ formData, handleChange }) => {
             name="verifyEmail"
             value={formData.verifyEmail}
             onChange={handleChange}
-            required
           />
         </label>
       </div>
@@ -60,7 +56,6 @@ const ResumeForm = ({ formData, handleChange }) => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            required
           />
         </label>
 
@@ -83,7 +78,6 @@ const ResumeForm = ({ formData, handleChange }) => {
             name="resume"
             accept=".doc,.docx,.pdf"
             onChange={handleChange}
-            required
           />
         </label>
         <p className="resume-info">

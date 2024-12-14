@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "../../CSS/LandingPageCSS/AboutComponent.css";
+import { Link } from "react-router-dom";
 
 const AboutComponent = () => {
   return (
@@ -26,7 +27,9 @@ const AboutComponent = () => {
             We invite you to learn more about our process, our people and how we
             reimagine how business gets done.
           </p>
-          <button className="about-button">About Kforce</button>
+          <Link to="/about">
+            <button className="about-button">About Kforce</button>
+          </Link>
         </div>
       </div>
     </div>

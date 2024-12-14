@@ -14,7 +14,7 @@
   background-size: cover;
   background-position: center;
   background-color: rgb(23, 82, 119);
-  z-index: 2000;
+  z-index: 1000;
   color: white;
   font-size: 1.5rem;
   font-weight: bold;

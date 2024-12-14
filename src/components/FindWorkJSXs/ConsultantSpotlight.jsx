@@ -13,10 +13,7 @@ const ConsultantSpotlight = () => {
           className="imageColumnMacro-consultanSpotlightMacro"
           style={{ transform: "translateY(0px)" }}
         >
-          <img
-            src="https://kforcewebeast.azureedge.net/media/407195/consultant-spotlight-1.png"
-            alt="Virendra Kumar"
-          />
+          <img src="/consultant-spotlight-1.png" alt="Virendra Kumar" />
         </div>
         <div
           className="textColumnMacro-consultanSpotlightMacro"
@@ -49,10 +46,7 @@ const ConsultantSpotlight = () => {
           className="imageColumnMacro-consultanSpotlightMacro"
           style={{ transform: "translateY(0px)" }}
         >
-          <img
-            src="https://kforcewebeast.azureedge.net/media/406896/headshot2.png"
-            alt="Jill Tucker"
-          />
+          <img src="/headshot2.png" alt="Jill Tucker" />
         </div>
         <div
           className="textColumnMacro-consultanSpotlightMacro"
@@ -103,10 +97,7 @@ const ConsultantSpotlight = () => {
           className="imageColumnMacro-consultanSpotlightMacro"
           style={{ transform: "translateY(0px)" }}
         >
-          <img
-            src="https://kforcewebeast.azureedge.net/media/406899/headshot3.png"
-            alt="Steven Waters"
-          />
+          <img src="/headshot3.png" alt="Steven Waters" />
         </div>
       </div>
     </div>

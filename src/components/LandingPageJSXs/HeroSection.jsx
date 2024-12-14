@@ -22,13 +22,15 @@ const HeroSection = () => {
       <div className="hero-content">
         <article className="content-container">
           <span>
-            Let&apos;s <br /> <br />
+            Let&apos;s <br />
             transform <br /> business,
             <br /> together
           </span>
+          <br />
+          <br />
           <p>
             <a
-              href="/knowledge-center/together-toward-tomorrow/"
+              href="/about"
               title="Together Toward Tomorrow"
               className="btn-filled"
             >

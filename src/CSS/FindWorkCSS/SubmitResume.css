@@ -1,20 +1,27 @@
 /* SubmitResume Component Styles */
-.submit-resume {
-  padding: 2rem;
-}
 
 .header {
   background-image: url("/bg-slashes-2.png");
   height: 30vh;
   color: white;
   display: flex;
+  background-position: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
   flex-direction: column;
   justify-content: center;
+  object-fit: cover;
   padding: 1rem;
-  text-align: center;
+  text-align: start;
   width: 100%;
   background-blend-mode: darken;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.title-id {
+  margin: 2rem 1rem;
+}
+.required-note {
+  text-align: center;
 }
 
 .header h1,
@@ -35,6 +42,7 @@ hr {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  padding: 2rem;
 }
 
 .privacy-policy {

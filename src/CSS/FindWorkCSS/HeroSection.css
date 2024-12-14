@@ -1,6 +1,5 @@
 .page-job-seeker .page-hero-image {
-  background: url("https://kforcewebeast.azureedge.net/media/406892/hero.jpg")
-    no-repeat center center;
+  background: url("/hero.jpg") no-repeat center center;
   background-size: cover;
   overflow: hidden;
   height: 100vh; /* Set to 100vh for mobile by default */
@@ -53,8 +52,7 @@
 /* Mobile and small screen optimization */
 @media screen and (max-width: 600px) {
   .page-job-seeker .page-hero-image {
-    background: url("https://kforcewebeast.azureedge.net/media/406893/find-work-mobile-header.png")
-      no-repeat center center;
+    background: url("/find-work-mobile-header.png") no-repeat center center;
     background-size: cover;
     height: 100vh; /* Ensure 100vh on mobile */
     padding: 0;

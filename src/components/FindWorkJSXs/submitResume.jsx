@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import firebaseApp from "../../config/firebaseConfig"; // Import Firebase configuration
 import ResumeForm from "./ResumeForm";
+import Swal from "sweetalert2";
 import "../../CSS/FindWorkCSS/SubmitResume.css";
 
 // Initialize Firebase Storage
@@ -13,9 +14,6 @@ const storage = getStorage(firebaseApp);
 const SubmitResume = () => {
   // Get jobId and jobTitle from URL params
   const { jobId, jobTitle } = useParams();
-
-  // Log values to check if they're passed correctly
-  console.log("Job ID:", jobId, "Job Title:", jobTitle);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -41,18 +39,27 @@ const SubmitResume = () => {
     }
   };
 
+  const validateForm = () => {
+    if (!formData.firstName.trim()) return "First name is required.";
+    if (!formData.lastName.trim()) return "Last name is required.";
+    if (!formData.primaryEmail.trim()) return "Primary email is required.";
+    if (!formData.verifyEmail.trim()) return "Please confirm your email.";
+    if (formData.primaryEmail !== formData.verifyEmail)
+      return "Emails do not match.";
+    if (!formData.resume) return "Please upload your resume.";
+    return null;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate form fields
-    if (
-      !formData.firstName ||
-      !formData.lastName ||
-      !formData.primaryEmail ||
-      formData.primaryEmail !== formData.verifyEmail ||
-      !formData.resume
-    ) {
-      alert("Please fill all required fields correctly.");
+    const validationError = validateForm();
+    if (validationError) {
+      Swal.fire({
+        icon: "error",
+        title: "Validation Error",
+        text: validationError,
+      });
       return;
     }
 
@@ -90,25 +97,39 @@ const SubmitResume = () => {
       });
 
       if (response === "OK") {
-        alert("Resume submitted successfully!");
-        setFormData({
-          firstName: "",
-          lastName: "",
-          primaryEmail: "",
-          verifyEmail: "",
-          phone: "",
-          state: "",
-          zip: "",
-          country: "",
-          homeAddress: "",
-          resume: null,
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: `Your resume for the job ${jobTitle} has been submitted.`,
+        }).then(() => {
+          // Reset the form state
+          setFormData({
+            firstName: "",
+            lastName: "",
+            primaryEmail: "",
+            verifyEmail: "",
+            phone: "",
+            state: "",
+            zip: "",
+            country: "",
+            homeAddress: "",
+            resume: null,
+          });
         });
       } else {
-        alert("Failed to submit resume. Please try again.");
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Failed to submit resume. Please try again.",
+        });
       }
     } catch (error) {
       console.error("Error during submission:", error);
-      alert("An error occurred while submitting the resume.");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "An error occurred while submitting your resume.",
+      });
     } finally {
       setLoading(false);
     }
@@ -118,13 +139,16 @@ const SubmitResume = () => {
     <div className="submit-resume">
       <div className="header">
         <h1>Find Work</h1>
-        <h2>
+      </div>
+      <div className="title-id">
+        <p>
           {jobId && jobTitle ? `JobTitle: ${jobTitle} ` : "Submit Your Resume"}
-        </h2>
-        <h2>{jobId && jobTitle ? `JobID: ${jobId} ` : ""}</h2>
+        </p>
+        <p>{jobId && jobTitle ? `JobID: ${jobId} ` : ""}</p>
       </div>
 
       <p className="required-note">All fields with an asterisk are required.</p>
+
       <hr />
 
       <form onSubmit={handleSubmit} className="resume-form">
@@ -139,7 +163,7 @@ const SubmitResume = () => {
         </div>
 
         <button type="submit" className="submit-button" disabled={loading}>
-          {loading ? "Submitting..." : "Submit"}
+          {loading ? "Processing..." : "Submit"}
         </button>
       </form>
     </div>

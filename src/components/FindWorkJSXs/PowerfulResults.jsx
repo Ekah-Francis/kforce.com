@@ -21,20 +21,10 @@ const PowerfulResults = () => {
       </p>
       <p>&nbsp;</p>
       <div className="buttonContainer">
-        <a
-          href="/about/careers-at-kforce/"
-          target="_blank"
-          rel="noopener"
-          className="btn btn-darkblue"
-        >
+        <a href="/submit-resume" rel="noopener" className="btn btn-darkblue">
           Careers at Kforce
         </a>
-        <a
-          href="/about/esg/"
-          target="_blank"
-          rel="noopener"
-          className="btn btn-darkblue"
-        >
+        <a href="/about" rel="noopener" className="btn btn-darkblue">
           See Our Impact
         </a>
       </div>

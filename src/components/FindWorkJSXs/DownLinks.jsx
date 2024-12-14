@@ -10,7 +10,7 @@ const DownLinks = () => {
         <hr className="horizontal-top" />
         <ul className="unorder-flex">
           <li>
-            <Link to="/find-work/search-jobs/" className="bg-01">
+            <Link to="/search-jobs" className="bg-01">
               <div>
                 <span>Search Jobs</span>
               </div>
@@ -19,7 +19,7 @@ const DownLinks = () => {
           <hr className="inline-hr" />
 
           <li>
-            <Link to="/find-work/submit-your-resume/" className="bg-04">
+            <Link to="/submit-resume" className="bg-04">
               <div>
                 <span>Submit Your Resume</span>
               </div>
@@ -28,13 +28,13 @@ const DownLinks = () => {
           <hr className="inline-hr" />
 
           <li>
-            <Link to="/about/" className="bg-03">
+            <Link to="/about" className="bg-03">
               <div>
                 <span>About Kforce</span>
               </div>
             </Link>
           </li>
-          <hr className="inline-hr" />
+          {/* <hr className="inline-hr" />
 
           <li>
             <Link to="/find-work/visa-sponsorship-solutions/" className="bg-02">
@@ -42,7 +42,7 @@ const DownLinks = () => {
                 <span>Visa Sponsorship</span>
               </div>
             </Link>
-          </li>
+          </li> */}
         </ul>
         <hr className="horizontal-top" />
       </div>
