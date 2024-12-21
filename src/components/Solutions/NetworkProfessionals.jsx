@@ -25,7 +25,7 @@ const NetworkProfessionals = () => {
       </div>
       <div className="network-image-section">
         <img
-          src="https://kforcewebeast.azureedge.net/media/407154/team-solutions-2.png"
+          src="/team-solutions-2.png"
           alt="Professionals"
           className="network-image"
         />

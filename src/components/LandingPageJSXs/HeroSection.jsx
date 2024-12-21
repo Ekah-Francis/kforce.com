@@ -7,8 +7,9 @@ const HeroSection = () => {
     <div className="hero-section">
       {/* Video Background */}
       <div className="video-background">
-        <video autoPlay loop muted className="video-element">
+        <video autoPlay loop muted playsInline className="video-element">
           <source src="/kforce-vid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
       </div>
 

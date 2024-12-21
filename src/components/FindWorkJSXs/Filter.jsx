@@ -1,13 +1,16 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import "../../CSS/FindWorkCSS/Filter.css";
-import JobsList from "./JobsList";
-import jobsData from "../../data/jobs"; // Import the jobs data
+import JobsList from "./JobsList"; // Import JobsList
+import { FaSuitcase } from "react-icons/fa";
 
-const FilterComponent = () => {
+const FilterComponent = ({ inputValue, otherName }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [activeFilters, setActiveFilters] = useState([]);
-  const [filters] = useState({
+  const [sortOption, setSortOption] = useState("relevant");
+
+  const filters = {
     jobType: { Contract: 598, Permanent: 615 },
     remote: { Full: 193, Partial: 569 },
     areaOfExpertise: { "Finance and Accounting": 13, Technology: 649 },
@@ -19,24 +22,14 @@ const FilterComponent = () => {
       "Financial Services": 67,
       "Healthcare Services": 34,
       Insurance: 19,
-      Retail: 66,
       "Telecommunications Services": 22,
-      "Other/Not Classified": 96,
     },
     jobSkills: {
-      Able: 97,
-      Agile: 147,
-      Cloud: 145,
-      Infrastructure: 73,
       "Project Management": 79,
       "Software Development": 74,
-      SQL: 92,
-      Testing: 108,
-      Training: 123,
-      Troubleshooting: 83,
     },
     datePosted: { "24 Hours": 0, "3 Days": 0, "All Jobs": 649 },
-  });
+  };
 
   const handleFilterClick = (filter) => {
     if (activeFilters.includes(filter)) {
@@ -50,13 +43,17 @@ const FilterComponent = () => {
     setIsFilterOpen((prev) => !prev);
   };
 
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+  };
+
   // Filter jobs based on active filters
-  const filteredJobs = jobsData.filter((job) => {
+  let filteredJobs = otherName.filter((job) => {
     if (activeFilters.length === 0) return true;
 
     return activeFilters.every((filter) => {
       return (
-        (filters.jobType[job.jobType] && job.jobType === filter) ||
+        (filters.jobType[job.type] && job.type === filter) ||
         (filters.remote[job.remote] && job.remote === filter) ||
         (filters.areaOfExpertise[job.areaOfExpertise] &&
           job.areaOfExpertise === filter) ||
@@ -67,11 +64,21 @@ const FilterComponent = () => {
     });
   });
 
+  // Sort filtered jobs
+  if (sortOption === "newest") {
+    filteredJobs = filteredJobs.sort(
+      (a, b) => new Date(b.dateAdded) - new Date(a.dateAdded)
+    );
+  } else if (sortOption === "oldest") {
+    filteredJobs = filteredJobs.sort(
+      (a, b) => new Date(a.dateAdded) - new Date(b.dateAdded)
+    );
+  }
+
   return (
     <div className="flex-n-cont">
       <div>
         <div className="btn-bond">
-          {/* <button className="save-job-alert">Save a Job Alert</button> */}
           <button
             className="save-job-alert"
             onClick={() => setActiveFilters([])}
@@ -90,7 +97,11 @@ const FilterComponent = () => {
               <div className="filter-section">
                 <h3 className="filter-title">Sort by</h3>
               </div>
-              <select className="dropdown-filter">
+              <select
+                className="dropdown-filter"
+                value={sortOption}
+                onChange={handleSortChange}
+              >
                 <option value="relevant">Relevant Jobs</option>
                 <option value="oldest">Oldest Jobs First</option>
                 <option value="newest">Newest Jobs First</option>
@@ -123,7 +134,7 @@ const FilterComponent = () => {
       </div>
 
       {/* Pass the filtered jobs to JobsList */}
-      <JobsList jobs={filteredJobs} className="listing" />
+      <JobsList jobs={filteredJobs} query={inputValue} className="listing" />
     </div>
   );
 };

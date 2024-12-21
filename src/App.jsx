@@ -19,6 +19,8 @@ import AboutLanding from "./components/AboutJSXs/AboutLanding";
 import LeaderLanding from "./components/AboutJSXs/LeaderLanding";
 import SignInLanding from "./components/SignInJSXs/SignInLanding";
 import LoginComponent from "./components/SignInJSXs/LoginComponent";
+import ScrollToTop from "../ScrollToTop";
+import ContactForm from "./components/LandingPageJSXs/ContactForm";
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
       {/* Wrap the application in the JobProvider */}
       <BrowserRouter>
         <Navbar />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/find-work" element={<FindWork />} />
@@ -45,6 +48,7 @@ function App() {
           <Route path="/login" element={<LoginComponent />} />
           <Route path="/sign-in" element={<SignInLanding />} />
           <Route path="/job/:id" element={<JobDetails jobs={jobs} />} />
+          <Route path="/contact" element={<ContactForm />} />
         </Routes>
         <Footer />
       </BrowserRouter>

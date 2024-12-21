@@ -128,9 +128,10 @@
     padding: 1rem;
     justify-content: center;
     align-items: center;
+    margin-top: 5px;
   }
   .save-job-alert {
-    margin: 0 auto;
+    margin: 2rem auto;
     width: 80vw;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -154,7 +155,7 @@
   .filter-toggle-button {
     display: block;
     width: 100%;
-    margin-top: 2rem;
+    /* margin-top: 4rem; */
     padding: 1rem;
   }
 

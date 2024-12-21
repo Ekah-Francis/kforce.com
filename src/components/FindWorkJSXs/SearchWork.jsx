@@ -3,16 +3,17 @@ import React, { useState, useEffect } from "react";
 import "../../CSS/FindWorkCSS/SearchWork.css";
 import { FaCaretDown, FaSearch } from "react-icons/fa";
 import FilterComponent from "./Filter";
+import jobsData from "../../data/jobs"; // Import your job data
 
 const SearchJob = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [dropdownPlaceholder, setDropdownPlaceholder] =
     useState("Type to search");
   const [inputValue, setInputValue] = useState("");
-  const [searchTitle, setSearchTitle] = useState(""); // For job title/skills search
-  const [searchLocation, setSearchLocation] = useState(""); // For location search
-  const [isLoading, setIsLoading] = useState(true); // For loading screen
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 768); // Check screen size
+  const [searchLocation, setSearchLocation] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 768);
+  const [isSearching, setIsSearching] = useState(false);
 
   // Listen for screen resize to update state
   useEffect(() => {
@@ -32,11 +33,6 @@ const SearchJob = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleFocus = () => {
-    setIsDropdownOpen(true);
-    setDropdownPlaceholder("Type to search"); // Reset to "Type to search" when dropdown opens
-  };
-
   const handleChange = (e) => {
     setInputValue(e.target.value);
 
@@ -44,19 +40,26 @@ const SearchJob = () => {
     if (e.target.value.length > 0) {
       setDropdownPlaceholder("Loading...");
     } else {
-      setDropdownPlaceholder("Type to search"); // Reset if input is cleared
+      setDropdownPlaceholder("Type to search");
     }
   };
 
   const handleDropdownClick = () => {
-    setIsDropdownOpen((prev) => !prev); // Toggle dropdown visibility
+    setIsDropdownOpen((prev) => !prev);
     setDropdownPlaceholder("Type to search");
   };
 
   const handleSearch = () => {
-    // Trigger search logic
-    setSearchTitle(inputValue);
+    setIsSearching(true);
+    setTimeout(() => {
+      setIsSearching(false);
+    }, 1000); // Simulate search delay
   };
+
+  // Rename filteredJobs to otherName
+  const otherName = jobsData.filter(
+    (job) => job.title.toLowerCase().includes(inputValue.toLowerCase()) // Case-insensitive search
+  );
 
   if (isLoading) {
     return (
@@ -86,14 +89,14 @@ const SearchJob = () => {
             </div>
           </div>
 
-          {/* Blue Background Section */}
           <div className="blue-bg-section">
             <div className="input-container">
               <input
                 type="text"
                 placeholder="Search jobs by title or skills"
                 className="input-field"
-                onChange={(e) => setSearchTitle(e.target.value)}
+                onChange={handleChange}
+                value={inputValue}
               />
               <div className="input-wrapper">
                 <input
@@ -116,17 +119,22 @@ const SearchJob = () => {
                   onClick={handleSearch}
                 />
               ) : (
-                <button className="search-button" onClick={handleSearch}>
-                  Search
+                <button
+                  className="search-button"
+                  onClick={handleSearch}
+                  disabled={isSearching}
+                >
+                  {isSearching ? "Searching..." : "Search"}
                 </button>
               )}
             </div>
           </div>
         </div>
       </div>
+
       <FilterComponent
-        searchTitle={searchTitle}
-        searchLocation={searchLocation}
+        inputValue={inputValue} // Pass inputValue as query
+        otherName={otherName} // Pass the otherName function as prop
       />
     </div>
   );
