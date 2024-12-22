@@ -16,7 +16,7 @@ const AboutExpert = () => {
     },
     {
       id: 3,
-      title: "20,000",
+      title: "30,000",
       description: "Consultant deployed nationwide",
     },
   ];
